@@ -1,5 +1,6 @@
 # include <stdio.h>
 # include <time.h>
+# include <string.h>
 
 extern "C" int init(int d_lev);
 extern "C" int connect_to_server(char server_addr[15],int port);
@@ -13,13 +14,13 @@ int main (){
     //stores as a string
     sprintf(server_addr,"130.195.6.196"); 
     //connects to server with ip address 130.195.6.196
-    connect_to_server(server_addr, 22);
+    connect_to_server(server_addr, 1024);
     char server_msg[24];
     //stores string
     sprintf(server_msg,"Please");
     //sends server_msg to server
     send_to_server(server_msg);
-    char pw[24];
+    char pw[6];
     //receives gate pw from server
     receive_from_server(pw);
     //prints the password
